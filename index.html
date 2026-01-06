@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AryanzUtama | Official Links</title>
+
+<style>
+:root{
+  --blue:#6fbce8;
+  --blue-soft:#eaf6ff;
+  --text:#1f2d3d;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:linear-gradient(to bottom,var(--blue-soft),#fff);
+  color:var(--text);
+  min-height:100vh;
+  animation:fadeBody 1s ease;
+}
+
+@keyframes fadeBody{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+/* ===== POPUP ===== */
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+
+.popup-box{
+  background:white;
+  padding:30px;
+  width:90%;
+  max-width:360px;
+  border-radius:18px;
+  text-align:center;
+  animation:popupZoom .6s ease;
+  box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+
+@keyframes popupZoom{
+  from{transform:scale(.7);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+.popup-box h2{
+  margin:0 0 10px;
+  color:#2b7db8;
+}
+
+.popup-box p{
+  font-size:14px;
+  color:#555;
+}
+
+.popup-box button{
+  margin-top:15px;
+  padding:12px 22px;
+  border:none;
+  border-radius:30px;
+  background:var(--blue);
+  color:white;
+  font-size:14px;
+  cursor:pointer;
+}
+
+/* ===== MAIN ===== */
+.container{
+  max-width:420px;
+  margin:auto;
+  padding:50px 20px;
+  text-align:center;
+}
+
+.avatar{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow:0 8px 25px rgba(0,0,0,.15);
+  animation:slideDown .8s ease;
+}
+
+@keyframes slideDown{
+  from{transform:translateY(-20px);opacity:0}
+  to{transform:translateY(0);opacity:1}
+}
+
+h1{
+  margin:18px 0 5px;
+  font-size:22px;
+}
+
+.tagline{
+  font-size:14px;
+  color:#4f8fb8;
+  margin-bottom:30px;
+}
+
+/* ===== BUTTONS ===== */
+.link{
+  display:block;
+  margin:14px 0;
+  padding:15px;
+  background:white;
+  border-radius:14px;
+  text-decoration:none;
+  color:#1f2d3d;
+  font-weight:600;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  transition:.35s;
+  position:relative;
+  overflow:hidden;
+}
+
+.link::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(111,188,232,.3),transparent);
+  transform:translateX(-100%);
+}
+
+.link:hover::after{
+  transform:translateX(100%);
+  transition:transform .6s;
+}
+
+.link:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 30px rgba(0,0,0,.15);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  margin-top:40px;
+  font-size:12px;
+  color:#888;
+}
+</style>
+</head>
+
+<body>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-box">
+    <h2>Selamat Datang 👋</h2>
+    <p>
+      Kamu berada di halaman resmi <b>AryanzUtama</b><br>
+      Silakan pilih layanan yang kamu butuhkan
+    </p>
+    <button onclick="tutupPopup()">Lanjutkan</button>
+  </div>
+</div>
+
+<div class="container">
+  <!-- GANTI FOTO -->
+  <img src="https://via.placeholder.com/300" class="avatar">
+
+  <h1>AryanzUtama</h1>
+  <div class="tagline">Trusted ML Account Provider</div>
+
+  <!-- LINK -->
+  <a class="link" href="https://wa.me/6289679520905" target="_blank">
+    💬 WhatsApp Admin
+  </a>
+
+  <a class="link" href="#">
+    🛒 Cek Stok Akun ML
+  </a>
+
+  <a class="link" href="#">
+    📸 Instagram
+  </a>
+
+  <a class="link" href="#">
+    🌐 Website Resmi
+  </a>
+
+  <footer>
+    © 2025 AryanzUtama
+  </footer>
+</div>
+
+<script>
+function tutupPopup(){
+  document.getElementById("popup").style.display="none";
+}
+</script>
+
+</body>
+</html>
