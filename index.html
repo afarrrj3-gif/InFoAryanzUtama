@@ -8,8 +8,8 @@
 <style>
 :root{
   --b1:#4fa3d1;
-  --b2:#7cc8f0;
-  --b3:#d9f2ff;
+  --b2:#8fd3f4;
+  --b3:#eaf7ff;
   --dark:#0c2a3f;
 }
 
@@ -19,7 +19,6 @@ body{
   font-family:'Segoe UI',Arial,sans-serif;
   background:linear-gradient(180deg,var(--b3),#ffffff);
   color:#123;
-  overflow-x:hidden;
 }
 
 /* ===== ANIMATIONS ===== */
@@ -32,15 +31,15 @@ body{
   50%{background-position:100% 50%}
   100%{background-position:0% 50%}
 }
-@keyframes float{
-  0%,100%{transform:translate(-50%,0)}
-  50%{transform:translate(-50%,-8px)}
+@keyframes pulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.05)}
 }
 
 /* ===== HEADER ===== */
 .header{
   position:relative;
-  height:300px;
+  height:320px;
   overflow:hidden;
   border-bottom-left-radius:40px;
   border-bottom-right-radius:40px;
@@ -51,54 +50,52 @@ body{
   inset:0;
   background:linear-gradient(120deg,var(--b1),var(--b2),var(--b1));
   background-size:200% 200%;
-  animation:gradientMove 10s ease infinite;
+  animation:gradientMove 12s ease infinite;
   z-index:1;
 }
 .header img{
   width:100%;
   height:100%;
   object-fit:cover;
-  opacity:.75;
+  opacity:.55;
+  position:absolute;
   z-index:2;
-  position:relative;
 }
 
-/* ===== BRAND ===== */
-.brand{
+/* ===== CENTER BRAND ===== */
+.brand-center{
   position:absolute;
-  bottom:-45px;
-  left:50%;
-  transform:translateX(-50%);
-  background:white;
-  padding:20px 26px;
-  border-radius:26px;
-  box-shadow:0 20px 50px rgba(0,0,0,.25);
+  inset:0;
+  z-index:3;
   display:flex;
-  gap:16px;
+  flex-direction:column;
   align-items:center;
-  animation:float 5s ease-in-out infinite;
-  z-index:5;
+  justify-content:center;
+  text-align:center;
+  color:white;
 }
-.brand img{
-  width:64px;
-  height:64px;
-  border-radius:18px;
+.brand-center img{
+  width:90px;
+  height:90px;
+  border-radius:26px;
+  box-shadow:0 15px 40px rgba(0,0,0,.4);
+  animation:pulse 4s ease-in-out infinite;
 }
-.brand h1{
+.brand-center h1{
+  margin:14px 0 4px;
+  font-size:24px;
+  letter-spacing:.5px;
+}
+.brand-center p{
   margin:0;
-  font-size:20px;
-  color:var(--dark);
-}
-.brand p{
-  margin:4px 0 0;
-  font-size:13px;
-  color:#567;
+  font-size:14px;
+  opacity:.95;
 }
 
 /* ===== CONTENT ===== */
 .container{
   max-width:720px;
-  margin:100px auto 40px;
+  margin:30px auto 40px;
   padding:0 18px;
 }
 .section{
@@ -107,8 +104,8 @@ body{
 }
 .section h3{
   margin:0 0 14px;
-  font-size:15px;
-  letter-spacing:.8px;
+  font-size:14px;
+  letter-spacing:1px;
   color:#345;
 }
 
@@ -125,27 +122,10 @@ body{
   color:#123;
   box-shadow:0 12px 30px rgba(0,0,0,.08);
   transition:.35s;
-  position:relative;
-  overflow:hidden;
-}
-.link::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,.7),transparent);
-  transform:translateX(-100%);
-}
-.link:hover::after{
-  transform:translateX(100%);
-  transition:transform .7s;
 }
 .link:hover{
-  transform:translateY(-5px);
-  box-shadow:0 20px 45px rgba(79,163,209,.4);
-}
-.link img{
-  width:34px;
-  height:34px;
+  transform:translateY(-4px);
+  box-shadow:0 20px 45px rgba(79,163,209,.35);
 }
 .link span{
   font-size:15px;
@@ -155,8 +135,8 @@ body{
 /* ===== MUSIC ===== */
 .music-btn{
   position:fixed;
-  bottom:20px;
-  right:20px;
+  bottom:18px;
+  right:18px;
   background:var(--b1);
   color:white;
   border:none;
@@ -182,12 +162,8 @@ footer{
 <!-- HEADER -->
 <div class="header">
   <img src="https://res.cloudinary.com/dtdodhqqi/image/upload/v1766772767/IMG-20251128-WA0091_ldbe9l.jpg">
-</div>
-
-<!-- BRAND -->
-<div class="brand">
-  <img src="https://res.cloudinary.com/dtdodhqqi/image/upload/v1766845910/IMG-20251128-WA0094_1_rrrhdn.jpg">
-  <div>
+  <div class="brand-center">
+    <img src="https://res.cloudinary.com/dtdodhqqi/image/upload/v1766845910/IMG-20251128-WA0094_1_rrrhdn.jpg">
     <h1>AryanzUtama</h1>
     <p>Situs Resmi AryanzUtama</p>
   </div>
@@ -243,8 +219,8 @@ footer{
 const bgm=document.getElementById("bgm");
 let play=false;
 function toggleMusic(){
-  if(!play){bgm.play();play=true}
-  else{bgm.pause();play=false}
+  play ? bgm.pause() : bgm.play();
+  play=!play;
 }
 </script>
 
