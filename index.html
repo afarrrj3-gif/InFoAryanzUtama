@@ -6,128 +6,101 @@
 <title>AryanzUtama | Situs Resmi</title>
 
 <style>
-:root{
-  --blue1:#4fa3d1;
-  --blue2:#7fc8ee;
-  --blue3:#eaf7ff;
-  --dark:#0c2a3f;
-}
-
 *{box-sizing:border-box}
 body{
   margin:0;
   font-family:'Segoe UI',Arial,sans-serif;
-  background:linear-gradient(180deg,var(--blue3),#ffffff);
-  color:#123;
+  background:#0b141a;
+  color:#e9f6ff;
 }
 
-/* ===== ANIMATION ===== */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(25px)}
-  to{opacity:1;transform:translateY(0)}
-}
-@keyframes gradientMove{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-
-/* ===== HEADER / BANNER ===== */
+/* ===== HEADER ===== */
 .header{
   position:relative;
   height:260px;
-  background:linear-gradient(120deg,var(--blue1),var(--blue2),var(--blue1));
-  background-size:200% 200%;
-  animation:gradientMove 12s ease infinite;
-  border-bottom-left-radius:42px;
-  border-bottom-right-radius:42px;
+  background:#000;
   overflow:hidden;
 }
 .header img{
   width:100%;
   height:100%;
-  object-fit:contain;
-  padding:10px;
+  object-fit:cover;
+  filter:brightness(.85);
 }
 
-/* ===== LOGO FLOAT CENTER ===== */
-.logo-float{
+/* ===== LOGO BULAT ===== */
+.logo{
   position:absolute;
-  bottom:-45px;
+  bottom:-55px;
   left:50%;
   transform:translateX(-50%);
-  background:white;
-  padding:10px;
-  border-radius:28px;
-  box-shadow:0 15px 40px rgba(0,0,0,.25);
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  background:#0b141a;
+  padding:6px;
 }
-.logo-float img{
-  width:80px;
-  height:80px;
-  border-radius:20px;
+.logo img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
 }
 
-/* ===== BRAND TEXT ===== */
-.brand-text{
-  margin-top:65px;
+/* ===== PROFILE TEXT ===== */
+.profile{
+  margin-top:75px;
   text-align:center;
 }
-.brand-text h1{
-  margin:6px 0 4px;
-  font-size:22px;
+.profile h1{
+  margin:6px 0 2px;
+  font-size:24px;
+  letter-spacing:.5px;
 }
-.brand-text p{
+.profile p{
   margin:0;
+  color:#9ccfe8;
   font-size:14px;
-  color:#456;
 }
 
 /* ===== CONTENT ===== */
 .container{
   max-width:720px;
-  margin:30px auto 40px;
-  padding:0 18px;
+  margin:28px auto;
+  padding:0 16px;
 }
 .section{
-  margin-bottom:34px;
-  animation:fadeUp .8s ease both;
+  margin-bottom:30px;
 }
 .section h3{
-  margin:0 0 14px;
-  font-size:14px;
+  margin:0 0 12px;
+  font-size:13px;
+  color:#7fbfe3;
   letter-spacing:1px;
-  color:#345;
 }
 
-/* ===== LINK CARD ===== */
+/* ===== BUTTON ===== */
 .link{
-  background:white;
-  padding:18px 20px;
-  border-radius:22px;
-  margin-bottom:14px;
-  display:flex;
-  align-items:center;
-  gap:14px;
+  background:#111b21;
+  padding:16px 18px;
+  border-radius:14px;
+  margin-bottom:12px;
   text-decoration:none;
-  color:#123;
-  box-shadow:0 12px 28px rgba(0,0,0,.08);
-  transition:.35s;
+  color:#e9f6ff;
+  display:block;
+  transition:.25s;
+  border:1px solid #1e2a33;
 }
 .link:hover{
-  transform:translateY(-4px);
-  box-shadow:0 20px 45px rgba(79,163,209,.35);
-}
-.link span{
-  font-size:15px;
-  font-weight:500;
+  background:#162029;
+  transform:translateY(-2px);
 }
 
 /* ===== FOOTER ===== */
 footer{
   text-align:center;
-  padding:30px 15px;
+  padding:28px 12px;
   font-size:13px;
-  color:#678;
+  color:#7aa9c6;
 }
 </style>
 </head>
@@ -136,13 +109,14 @@ footer{
 
 <!-- HEADER -->
 <div class="header">
-  <img src="https://res.cloudinary.com/dtdodhqqi/image/upload/v1766772767/IMG-20251128-WA0091_ldbe9l.jpg" alt="AryanzUtama Banner">
-  <div class="logo-float">
-    <img src="https://res.cloudinary.com/dtdodhqqi/image/upload/v1766845910/IMG-20251128-WA0094_1_rrrhdn.jpg" alt="Logo">
+  <img src="https://res.cloudinary.com/dtdodhqqi/image/upload/v1766772767/IMG-20251128-WA0091_ldbe9l.jpg">
+  <div class="logo">
+    <img src="https://res.cloudinary.com/dtdodhqqi/image/upload/v1766845910/IMG-20251128-WA0094_1_rrrhdn.jpg">
   </div>
 </div>
 
-<div class="brand-text">
+<!-- PROFILE -->
+<div class="profile">
   <h1>AryanzUtama</h1>
   <p>Situs Resmi AryanzUtama</p>
 </div>
@@ -152,38 +126,38 @@ footer{
 
   <div class="section">
     <h3>SOCIAL MEDIA</h3>
-    <a class="link" href="https://www.instagram.com/aryanz_stok" target="_blank"><span>Instagram Official</span></a>
-    <a class="link" href="https://www.tiktok.com/@uryanzutama" target="_blank"><span>TikTok Official</span></a>
-    <a class="link" href="https://afarrrj3-gif.github.io/Website-AryanzUtama/" target="_blank"><span>Website Resmi</span></a>
+    <a class="link" href="https://www.instagram.com/aryanz_stok" target="_blank">Instagram Official</a>
+    <a class="link" href="https://www.tiktok.com/@uryanzutama" target="_blank">TikTok Official</a>
+    <a class="link" href="https://afarrrj3-gif.github.io/Website-AryanzUtama/" target="_blank">Website Resmi</a>
   </div>
 
   <div class="section">
     <h3>CHANNEL & KOMUNITAS</h3>
-    <a class="link" href="https://whatsapp.com/channel/0029VbB5xTP3GJOzlxzCl20S" target="_blank"><span>Channel ML</span></a>
-    <a class="link" href="https://whatsapp.com/channel/0029Vb6TFJAFy72Jy6JIpv0m" target="_blank"><span>Channel FF</span></a>
-    <a class="link" href="https://whatsapp.com/channel/0029Vb6vJ3L59PwIKlYIqM2u" target="_blank"><span>Channel Testimoni</span></a>
-    <a class="link" href="https://whatsapp.com/channel/0029Vb7YdgjDeON58YeoIj1H" target="_blank"><span>Channel Jasa Post</span></a>
+    <a class="link" href="https://whatsapp.com/channel/0029VbB5xTP3GJOzlxzCl20S" target="_blank">Channel ML</a>
+    <a class="link" href="https://whatsapp.com/channel/0029Vb6TFJAFy72Jy6JIpv0m" target="_blank">Channel FF</a>
+    <a class="link" href="https://whatsapp.com/channel/0029Vb6vJ3L59PwIKlYIqM2u" target="_blank">Channel Testimoni</a>
+    <a class="link" href="https://whatsapp.com/channel/0029Vb7YdgjDeON58YeoIj1H" target="_blank">Channel Jasa Post</a>
   </div>
 
   <div class="section">
     <h3>GRUP</h3>
-    <a class="link" href="https://chat.whatsapp.com/E9wCodL7tWK47qMfvbDH51" target="_blank"><span>Grup Utama</span></a>
-    <a class="link" href="https://chat.whatsapp.com/LoZfoj6HDZe62sAhofd26x" target="_blank"><span>Grup Utama 2</span></a>
-    <a class="link" href="https://chat.whatsapp.com/CIFbzYdMx2ZCtJ3J2Q7zKf" target="_blank"><span>Grup Stok RESS</span></a>
-    <a class="link" href="https://chat.whatsapp.com/EudBCjQjEKILmwvHZRSJHe" target="_blank"><span>Grup Stok RESS V2</span></a>
-    <a class="link" href="https://chat.whatsapp.com/LdllWIjsdCyFwyEWJnRowv" target="_blank"><span>Grup FF</span></a>
-    <a class="link" href="https://chat.whatsapp.com/I32qHzRI3m85ahrGSFBUq8" target="_blank"><span>Grup ML</span></a>
+    <a class="link" href="https://chat.whatsapp.com/E9wCodL7tWK47qMfvbDH51" target="_blank">Grup Utama</a>
+    <a class="link" href="https://chat.whatsapp.com/LoZfoj6HDZe62sAhofd26x" target="_blank">Grup Utama 2</a>
+    <a class="link" href="https://chat.whatsapp.com/CIFbzYdMx2ZCtJ3J2Q7zKf" target="_blank">Grup Stok RESS</a>
+    <a class="link" href="https://chat.whatsapp.com/EudBCjQjEKILmwvHZRSJHe" target="_blank">Grup Stok RESS V2</a>
+    <a class="link" href="https://chat.whatsapp.com/LdllWIjsdCyFwyEWJnRowv" target="_blank">Grup FF</a>
+    <a class="link" href="https://chat.whatsapp.com/I32qHzRI3m85ahrGSFBUq8" target="_blank">Grup ML</a>
   </div>
 
   <div class="section">
     <h3>KONTAK</h3>
-    <a class="link" href="https://wa.me/6289679520905" target="_blank"><span>WhatsApp Admin</span></a>
+    <a class="link" href="https://wa.me/6289679520905" target="_blank">WhatsApp Admin</a>
   </div>
 
 </div>
 
 <footer>
-  © 2025 AryanzUtama · Professional Digital Service
+  Verified by Aryanz · PoweredByAryanzUtama
 </footer>
 
 </body>
